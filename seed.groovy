@@ -13,7 +13,7 @@ pipelineJob('frontend') {
           }
         }
       }
-      'scriptPath'('jenkinsfile')
+      'scriptPath'('Jenkinsfile')
       'lightweight'(true)
     }
   }
@@ -39,7 +39,7 @@ pipelineJob('login') {
           }
         }
       }
-      'scriptPath'('jenkinsfile')
+      'scriptPath'('Jenkinsfile')
       'lightweight'(true)
     }
   }
@@ -62,7 +62,7 @@ pipelineJob('users') {
           }
         }
       }
-      'scriptPath'('jenkinsfile')
+      'scriptPath'('Jenkinsfile')
       'lightweight'(true)
     }
   }
@@ -87,7 +87,7 @@ pipelineJob('todo') {
           }
         }
       }
-      'scriptPath'('jenkinsfile')
+      'scriptPath'('Jenkinsfile')
       'lightweight'(true)
     }
   }
