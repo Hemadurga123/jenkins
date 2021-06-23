@@ -1,5 +1,48 @@
+def call() {
+  pipeline{
+    agent  any
 
-def call(Map params = [:]) {
+    stages {
+      stage ('prepare  the  Artifact') {
+        steps{
+          sh '''
+         zip -r ../frontend.zip *
+       '''
+        }
+      }
+      stage('upload artifact'){
+        steps{
+          sh '''
+          curl -f -v -u admin:admin123 --upload-file ../frontend.zip http://172.31.10.228:8081/repository/frontend/frontend.zip
+
+        '''
+
+
+        }
+
+      }
+
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/def call(Map params = [:]) {
   // Start Default Arguments
   def args = [
           NEXUS_IP               : '172.31.14.124',
@@ -57,4 +100,4 @@ def call(Map params = [:]) {
     }
 
   }
-}
+/}
