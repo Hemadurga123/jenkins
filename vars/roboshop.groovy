@@ -12,7 +12,7 @@ def call(Map params = [:]) {
 
     environment {
       COMPONENT = "${args.COMPONENT}"
-      NEXUS_IP = "${args.NEXUS_IP"
+      NEXUS_IP = "${args.NEXUS_IP}"
       PROJECT_NAME = "${args.PROJECT_NAME}"
     }
 
