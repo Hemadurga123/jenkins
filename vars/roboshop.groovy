@@ -25,10 +25,19 @@ def call(Map params = [:]) {
 
         steps{
           sh '''
-         zip -r ../frontend.zip *
+         zip -r ../${COMPONENT.zip} *
        '''
         }
       }
+      stage ('preparing the  Artifact') {
+        steps{
+          sh '''
+         zip -r ${COMPONENT.zip}  *
+        '''
+        }
+      }
+
+
       stage('upload artifact'){
         steps{
           sh '''
