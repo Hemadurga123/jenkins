@@ -18,7 +18,7 @@ def call(Map params = [:]) {
 
 
     stages {
-      stage ('prepare  the  Artifact') {
+      stage ('prepare  the  Artifact ---nginx') {
         when {
           environment name: 'COMPONENT', value: 'frontend'
         }
@@ -29,7 +29,7 @@ def call(Map params = [:]) {
        '''
         }
       }
-      stage ('preparing the Artifact') {
+      stage ('preparing the Artifact -----login') {
         when {
           environment name: 'COMPONENT', value: 'login'
         }
@@ -40,7 +40,7 @@ def call(Map params = [:]) {
        '''
         }
       }
-      stage ('preparing the Artifact') {
+      stage ('preparing the Artifact ------todo') {
         when {
           environment name: 'COMPONENT', value: 'todo'
         }
@@ -51,7 +51,7 @@ def call(Map params = [:]) {
        '''
         }
       }
-      stage ('preparing the Artifact') {
+      stage ('preparing the Artifact  ------users') {
         when {
           environment name: 'COMPONENT', value: 'users'
         }
