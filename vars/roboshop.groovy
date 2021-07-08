@@ -23,7 +23,7 @@ def call(Map params = [:]) {
     stages {
       stage('prepare  the  Artifact') {
         when {
-          environment name: 'COMPONENT', value: 'login'
+          environment name: 'COMPONENT', value: 'JAVA'
         }
 
         steps {
