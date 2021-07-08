@@ -42,9 +42,6 @@ def call(Map params = [:]) {
         }
       }
       stage ('prepare  the  Artifact for users') {
-        when {
-          environment name: 'COMPONENT', value: 'users'
-        }
         steps{
           sh '''
          zip -r ../users.zip *
