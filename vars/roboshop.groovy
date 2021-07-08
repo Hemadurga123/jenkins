@@ -31,40 +31,6 @@ def call(Map params = [:]) {
        '''
         }
       }
-      stage ('preparing the Artifact -----login') {
-        when {
-          environment name: 'COMPONENT', value: 'login'
-        }
-
-        steps{
-          sh '''
-         zip -r ../${COMPONENT.zip} *
-       '''
-        }
-      }
-      stage ('preparing the Artifact ------todo') {
-        when {
-          environment name: 'COMPONENT', value: 'todo'
-        }
-
-        steps{
-          sh '''
-         zip -r ../${COMPONENT.zip} *
-       '''
-        }
-      }
-      stage ('preparing the Artifact  ------users') {
-        when {
-          environment name: 'COMPONENT', value: 'users'
-        }
-
-        steps{
-          sh '''
-         zip -r ../${COMPONENT.zip} *
-       '''
-        }
-      }
-
       stage('upload artifact'){
         steps{
           sh '''
