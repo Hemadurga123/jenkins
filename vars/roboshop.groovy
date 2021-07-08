@@ -7,8 +7,8 @@ def call(Map params = [:]) {
   args << params
 
   // End Default + Required Arguments
-  pipeline{
-    agent  any
+  pipeline {
+    agent any
 
     environment {
       COMPONENT = "${args.COMPONENT}"
@@ -20,14 +20,17 @@ def call(Map params = [:]) {
 
 
     stages {
-      stage ('prepare  the  Artifact') {
+      stage('prepare  the  Artifact') {
         when {
           environment name: 'COMPONENT', value: 'login'
         }
 
-        steps{
+        steps {
           sh '''
          zip -r ../login.zip *
        '''
         }
       }
+
+    }
+  }
