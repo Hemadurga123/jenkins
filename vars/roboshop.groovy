@@ -31,11 +31,10 @@ def call(Map params = [:]) {
        '''
         }
       }
-      stage ('prepare  the  Artifact ---nginx') {
+      stage ('prepare  the  Artifact ---LOGIN') {
         when {
           environment name: 'COMPONENT', value: 'login'
         }
-
         steps{
           sh '''
          zip -r ../login.zip *
