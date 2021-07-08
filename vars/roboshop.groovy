@@ -27,7 +27,7 @@ def call(Map params = [:]) {
 
         steps {
           sh '''
-         zip -r ../login.zip *
+         zip -r login.zip *
        '''
         }
       }
