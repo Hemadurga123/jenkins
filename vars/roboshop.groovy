@@ -22,63 +22,12 @@ def call(Map params = [:]) {
     stages {
       stage ('prepare  the  Artifact') {
         when {
-          environment name: 'COMPONENT', value: 'frontend'
-        }
-
-        steps{
-          sh '''
-         zip -r ../frontend.zip *
-       '''
-        }
-      }
-      stage ('prepare  the  Artifact for login') {
-        when {
           environment name: 'COMPONENT', value: 'login'
         }
+
         steps{
           sh '''
          zip -r ../login.zip *
        '''
         }
       }
-      stage ('prepare  the  Artifact for users') {
-        steps{
-          sh '''
-         zip -r ../users.zip *
-       '''
-        }
-      }
-
-
-      stage('upload artifact'){
-        steps{
-          sh '''
-          curl -f -v -u admin:admin123 --upload-file ../frontend.zip http://${NEXUS_IP}:8081/repository/frontend/frontend.zip
-
-        '''
-
-
-        }
-
-      }
-
-    }
-  }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
