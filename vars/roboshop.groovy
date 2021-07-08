@@ -31,7 +31,7 @@ def call(Map params = [:]) {
        '''
         }
       }
-      stage ('prepare  the  Artifact') {
+      stage ('prepare  the  Artifact for login') {
         when {
           environment name: 'COMPONENT', value: 'login'
         }
