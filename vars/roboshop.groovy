@@ -37,7 +37,7 @@ def call(Map params = [:]) {
       }
       stage('prepare  the  Artifact ------login') {
         when{
-          environment name: 'APP_TYPE', value: 'NODEJS'
+          environment name: 'COMPONENT', value: 'login'
 
         }
         steps {
@@ -48,7 +48,7 @@ def call(Map params = [:]) {
       }
       stage('prepare  the  Artifact ------users') {
         when{
-          environment name: 'DEPLOY_TO', value: 'production'
+          environment name: 'COMPONENT', value: 'users'
 
         }
         steps {
