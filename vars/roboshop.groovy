@@ -31,36 +31,6 @@ def call(Map params = [:]) {
        '''
         }
       }
-      stages {
-        stage('prepare  the  Artifact -----login') {
-          steps {
-            sh '''
-           zip -r ../login.zip *
-         '''
-          }
-        }
-
-        stages {
-          stage('prepare  the  Artifact -----login') {
-            steps {
-              sh '''
-               zip -r ../users.zip *
-            '''
-            }
-          }
-          stages {
-            stage('prepare  the  Artifact -----login') {
-              steps {
-                sh '''
-                zip -r ../todo.zip *
-              '''
-              }
-            }
-
-
-          }
-        }
-      }
     }
   }
 }
