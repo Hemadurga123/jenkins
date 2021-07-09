@@ -26,7 +26,7 @@ def call(Map params = [:]) {
     stages {
       stage('prepare  the  Artifact ------frontend') {
         when{
-          environment name: 'APP_TYPE', value: 'NGINX'
+          environment name: 'COMPONENT', value: 'frontend'
 
         }
         steps {
