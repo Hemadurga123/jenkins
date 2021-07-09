@@ -1,8 +1,8 @@
 def call(Map params = [:]) {
   // Start Default Arguments
   def args = [
-          NEXUS_IP : '172.31.10.228',
-          SLAVE_LABEL : 'JAVA',
+          NEXUS_IP   : '172.31.10.228',
+          SLAVE_LABEL: 'JAVA',
 
   ]
   args << params
@@ -10,7 +10,7 @@ def call(Map params = [:]) {
   // End Default + Required Arguments
   pipeline {
     agent {
-         label "${args.SLAVE_LABEL}"
+      label "${args.SLAVE_LABEL}"
     }
 
     environment {
@@ -61,8 +61,6 @@ def call(Map params = [:]) {
           }
         }
       }
-
-
-    }
     }
   }
+}
