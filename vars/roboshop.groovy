@@ -24,10 +24,10 @@ def call(Map params = [:]) {
 
 
     stages {
-      stage('prepare  the  Artifact ------frontend') {
+      stage('prepare  the  Artifact ------login') {
         steps {
           sh '''
-         zip -r ../frontend.zip *
+         zip -r ../login.zip *
        '''
         }
       }
