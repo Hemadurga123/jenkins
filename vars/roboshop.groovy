@@ -9,26 +9,60 @@ def call(Map params = [:]) {
 
   // End Default + Required Arguments
   pipeline {
-    agent any
+    agent {
+         label "${args.SLAVE_LABEL}"
+    }
 
     environment {
       COMPONENT = "${args.COMPONENT}"
       NEXUS_IP = "${args.NEXUS_IP}"
       PROJECT_NAME = "${args.PROJECT_NAME}"
       SLAVE_LABEL = "${args.SLAVE_LABEL}"
+      APP_TYPE = ""
 
     }
 
 
     stages {
-      stage('prepare  the  Artifact') {
+      stage('prepare  the  Artifact ------frontend') {
         steps {
           sh '''
-         zip -r ../login.zip *
+         zip -r ../frontend.zip *
        '''
         }
       }
+      stages {
+        stage('prepare  the  Artifact -----login') {
+          steps {
+            sh '''
+          zip -r ../login.zip *
+            '''
+          }
+        }
+
+        stages {
+          stage('prepare  the  Artifact -----login') {
+            steps {
+              sh '''
+               zip -r ../users.zip *
+               '''
+            }
+          }
+          stages {
+            stage('prepare  the  Artifact -----login') {
+              steps {
+                sh '''
+                zip -r ../todo.zip *
+              '''
+              }
+            }
+
+
+          }
+        }
+      }
+
 
     }
+    }
   }
-}
