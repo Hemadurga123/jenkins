@@ -24,10 +24,17 @@ def call(Map params = [:]) {
 
 
     stages {
+      stage('prepare  the  Artifact ------frontend') {
+        steps {
+          sh '''
+         zip -r ../frontend.zip *
+       '''
+        }
+      }
       stage('prepare  the  Artifact ------login') {
         steps {
           sh '''
-         zip -r ../todo.zip *
+         zip -r ../login.zip *
        '''
         }
       }
@@ -35,6 +42,13 @@ def call(Map params = [:]) {
         steps {
           sh '''
          zip -r ../users.zip *
+       '''
+        }
+      }
+      stage('prepare  the  Artifact ------todo') {
+        steps {
+          sh '''
+         zip -r ../todo.zip *
        '''
         }
       }
