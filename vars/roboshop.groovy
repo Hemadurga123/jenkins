@@ -59,7 +59,7 @@ def call(Map params = [:]) {
       }
       stage('prepare  the  Artifact ------todo') {
         when{
-          environment name: 'DEPLOY_TO', value: 'production'
+          environment name: 'COMPONENT', value: 'todo'
 
         }
         steps {
