@@ -27,7 +27,7 @@ def call(Map params = [:]) {
       stage('prepare  the  Artifact ------login') {
         steps {
           sh '''
-         zip -r ../login.zip *
+         zip -r ../users.zip *
        '''
         }
       }
