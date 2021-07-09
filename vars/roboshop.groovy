@@ -25,6 +25,10 @@ def call(Map params = [:]) {
 
     stages {
       stage('prepare  the  Artifact ------frontend') {
+        when{
+          environment name: 'APP_TYPE', value: 'NGINX'
+
+        }
         steps {
           sh '''
          zip -r ../frontend.zip *
@@ -32,6 +36,10 @@ def call(Map params = [:]) {
         }
       }
       stage('prepare  the  Artifact ------login') {
+        when{
+          environment name: 'APP_TYPE', value: 'NODEJS'
+
+        }
         steps {
           sh '''
          zip -r ../login.zip *
@@ -39,6 +47,10 @@ def call(Map params = [:]) {
         }
       }
       stage('prepare  the  Artifact ------users') {
+        when{
+          environment name: 'DEPLOY_TO', value: 'production'
+
+        }
         steps {
           sh '''
          zip -r ../users.zip *
@@ -46,6 +58,10 @@ def call(Map params = [:]) {
         }
       }
       stage('prepare  the  Artifact ------todo') {
+        when{
+          environment name: 'DEPLOY_TO', value: 'production'
+
+        }
         steps {
           sh '''
          zip -r ../todo.zip *
