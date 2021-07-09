@@ -31,6 +31,13 @@ def call(Map params = [:]) {
        '''
         }
       }
+      stage('prepare  the  Artifact ------users') {
+        steps {
+          sh '''
+         zip -r ../users.zip *
+       '''
+        }
+      }
     }
   }
 }
