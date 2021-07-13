@@ -44,8 +44,8 @@
 //}
 
 
-def make_artifacts(APP_TYPE){
-  if(APP_TYPE == "NGINX") {
+def make_artifacts(component){
+  if(component == "frontend") {
       command = "zip -r ../frontend.zip *"
       def execute_com = sh(returnStdout: true, script: command)
       print execute_com
