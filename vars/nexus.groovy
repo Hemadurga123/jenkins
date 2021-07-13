@@ -45,7 +45,7 @@
 
 
 def make_artifacts(component){
-  if(componet == "frontend"){
+  if(component == "frontend"){
       command = "zip -r ../frontend.zip *"
       def execute_com=sh(returnStdout: true, script: command)
       print execute_com
