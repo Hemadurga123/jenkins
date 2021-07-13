@@ -46,8 +46,12 @@ def call(Map params = [:]) {
 
         }
         steps {
+          script{
+            prepare = new nexus()
+            prepare.make_artifacts 'login'
+          }
           sh '''
-         zip -r ../login.zip *
+         ls
        '''
         }
       }
@@ -57,8 +61,12 @@ def call(Map params = [:]) {
 
         }
         steps {
+          script{
+            prepare = new nexus()
+            prepare.make_artifacts 'users'
+          }
           sh '''
-         zip -r ../users.zip *
+          ls
        '''
         }
       }
@@ -68,8 +76,12 @@ def call(Map params = [:]) {
 
         }
         steps {
+          script{
+            prepare = new nexus ()
+            prepare.make_artifacts 'todo'
+          }
           sh '''
-         zip -r ../todo.zip *
+          ls
        '''
         }
       }
