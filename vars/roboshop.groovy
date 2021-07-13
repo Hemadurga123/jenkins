@@ -2,7 +2,7 @@ def call(Map params = [:]) {
   // Start Default Arguments
   def args = [
           NEXUS_IP   : '172.31.10.228',
-          SLAVE_LABEL: 'JAVA',
+          SLAVE_LABEL: 'NODEJS',
 
   ]
   args << params
@@ -24,7 +24,11 @@ def call(Map params = [:]) {
 
 
     stages {
-      stage('prepare  the  Artifact ------frontend') {
+      stage('prepare  the  Artifact ------NGINX') {
+        when{
+          environment name: 'APP_TYPE', value: 'NGINX'
+
+        }
         steps {
           script{
             prepare = new nexus()
