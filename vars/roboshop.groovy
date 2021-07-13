@@ -42,7 +42,7 @@ def call(Map params = [:]) {
       }
       stage('prepare  the  Artifact ------login') {
         when{
-          environment name: 'COMPONENT', value: 'NGINX'
+          environment name: 'COMPONENT', value: 'login'
 
         }
         steps {

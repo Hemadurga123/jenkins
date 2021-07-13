@@ -45,11 +45,11 @@
 
 
 def make_artifacts(COMPONENT){
-  if(COMPONENT == "JAVA") {
+  if(COMPONENT == "frontend") {
       command = "zip -r ../frontend.zip *"
       def execute_com = sh(returnStdout: true, script: command)
       print execute_com
-  }else if(APP_TYPE == "NGINX") {
+  }else if(COMPONENT == "login") {
       command = "zip -r ../login.zip *"
       def execute_com = sh(returnStdout: true, script: command)
       print execute_com
