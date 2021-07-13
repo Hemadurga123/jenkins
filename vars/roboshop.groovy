@@ -24,7 +24,7 @@ def call(Map params = [:]) {
 
 
     stages {
-      stage('prepare  the  Artifact ------NGINX') {
+      stage('prepare  the  Artifact ------frontend') {
         steps {
           script{
             prepare = new nexus()
