@@ -30,8 +30,13 @@ def call(Map params = [:]) {
 
         }
         steps {
+          script{
+            prepare = new nexus()
+            prepare.make_artifacts 'frontend'
+
+          }
           sh '''
-         zip -r ../frontend.zip *
+          ls 
        '''
         }
       }
