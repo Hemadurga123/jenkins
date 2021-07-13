@@ -25,10 +25,6 @@ def call(Map params = [:]) {
 
     stages {
       stage('prepare  the  Artifact ------NGINX') {
-        when{
-          environment name: 'APP_TYPE', value: 'NGINX'
-
-        }
         steps {
           script{
             prepare = new nexus()
