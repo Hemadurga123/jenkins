@@ -29,7 +29,7 @@
 //  def execute_com=sh(returnStdout: true, script: command)
 //  print execute_com
 //}
-}//
+//}
 
 //def code_build(APP_TYPE, COMPONENT) {
 //if(APP_TYPE == "NODEJS") {
