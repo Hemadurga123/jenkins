@@ -26,7 +26,7 @@ def call(Map params = [:]) {
     stages {
       stage('prepare  the  Artifact ------NGINX') {
         when{
-          environment name: 'COMPONENT', value: 'frontend'
+          environment name: 'APP_TYPE', value: 'NGINX'
 
         }
         steps {
@@ -42,7 +42,7 @@ def call(Map params = [:]) {
       }
       stage('prepare  the  Artifact ------login') {
         when{
-          environment name: 'COMPONENT', value: 'login'
+          environment name: 'APP_TYPE', value: 'NGINX'
 
         }
         steps {
