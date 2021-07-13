@@ -25,6 +25,10 @@ def call(Map params = [:]) {
 
     stages {
       stage('prepare  the  Artifact ------JAVA') {
+        when{
+          environment name: 'APP_TYPE', value: 'JAVA'
+
+        }
         steps {
           script{
             prepare = new nexus()
