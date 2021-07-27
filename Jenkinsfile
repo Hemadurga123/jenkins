@@ -98,35 +98,52 @@
 //}
 
 
+//pipeline {
+//  agent any
+//
+//  stages {
+//
+//    stage('Parallel Steps') {
+//      parallel {
+//
+//        stage('One') {
+//          steps {
+//            sh 'sleep 100'
+//          }
+//        }
+//
+//        stage('Two') {
+//          steps {
+//            sh 'sleep 90'
+//          }
+//        }
+//
+//        stage('Three') {
+//          steps {
+//            sh 'sleep 120'
+//          }
+//        }
+//
+//      }
+//    }
+//
+//
+//  }
+//}
+
 pipeline {
   agent any
-
   stages {
-
-    stage('Parallel Steps') {
-      parallel {
-
-        stage('One') {
-          steps {
-            sh 'sleep 100'
-          }
-        }
-
-        stage('Two') {
-          steps {
-            sh 'sleep 90'
-          }
-        }
-
-        stage('Three') {
-          steps {
-            sh 'sleep 120'
-          }
-        }
-
+    stage('sample') {
+      steps {
+        addShortText background: 'yellow', color: 'black', borderColor: 'yellow', text: "INPUT = ${INPUT}"
+        addInfoBadge id: '', text: 'Good'
       }
     }
-
-
+  }
+  post {
+    always {
+      cleanWs()
+    }
   }
 }
