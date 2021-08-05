@@ -130,20 +130,27 @@
 //
 //  }
 //}
-
 pipeline {
   agent any
-  stages {
-    stage('sample') {
-      steps {
-        addShortText background: 'yellow', color: 'black', borderColor: 'yellow', text: "INPUT = ${INPUT}"
-        addInfoBadge id: '', text: 'Good'
+   stages {
+      stage('parallel Steps') {
+         parallel {
+            stage('one') {
+                 steps {
+                    sh 'sleep 100'
+                 }
+            }
+            stage('two') {
+                 steps {
+                     sh 'sleep 90'
+                  }
+            }
+            stage('three') {
+                 steps {
+                     sh 'sleep 200'
+                 }
+            }
+         }
       }
-    }
-  }
-    post {
-    always {
-      cleanWs()
-    }
-  }
-}
+   }
+ }
