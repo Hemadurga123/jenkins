@@ -141,9 +141,9 @@ pipeline {
       }
     }
   }
-  post {
-        always {
-            junit 'build/reports/**/*.xml'
-        }
+    post {
+    always {
+      cleanWs()
     }
+  }
 }
